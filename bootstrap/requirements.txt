@@ -1,0 +1,11 @@
+Django
+ipdb
+ipython
+django-nose
+rednose
+django-debug-toolbar
+django-extensions
+model-mommy
+South
+django-braces
+Unipath
