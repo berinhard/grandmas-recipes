@@ -1,0 +1,16 @@
+*.pyc
+*~
+.Python
+/bin/
+/build/
+/include/
+/lib/
+/man/
+/share/
+*.db*
+*.swp
+*.swo
+.noseids
+.acceptance_noseids
+project/media/offer_images/
+*.log
