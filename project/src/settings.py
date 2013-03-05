@@ -37,9 +37,7 @@ MEDIA_ROOT = PROJECT_ROOT.child('media')
 MEDIA_URL = '/media/'
 STATIC_ROOT = PROJECT_ROOT.child('static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    STATIC_ROOT,
-)
+#STATICFILES_DIRS = ()
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -76,4 +74,5 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'src.core',
 )
