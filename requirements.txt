@@ -1,0 +1,7 @@
+Django
+django-extensions
+South
+django-braces
+Unipath
+psycopg2
+dj-database-url
