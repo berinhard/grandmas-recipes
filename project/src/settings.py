@@ -13,17 +13,6 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': PROJECT_ROOT.child('database.db'),
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
-}
-
 ALLOWED_HOSTS = []
 
 TIME_ZONE = 'America/Sao_Paulo'
@@ -37,9 +26,7 @@ MEDIA_ROOT = PROJECT_ROOT.child('media')
 MEDIA_URL = '/media/'
 STATIC_ROOT = PROJECT_ROOT.child('static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    STATIC_ROOT,
-)
+#STATICFILES_DIRS = ()
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -76,4 +63,25 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'src.core',
 )
+
+# Honor the 'X-Forwarded-Proto' header for request.is_secure()
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+#database config for heroku deployment
+try:
+    # Parse database configuration from $DATABASE_URL
+    import dj_database_url
+    DATABASES['default'] =  dj_database_url.config()
+except ImportError:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': PROJECT_ROOT.child('database.db'),
+            'USER': '',
+            'PASSWORD': '',
+            'HOST': '',
+            'PORT': '',
+        }
+    }
